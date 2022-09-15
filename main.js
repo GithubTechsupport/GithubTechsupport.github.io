@@ -370,7 +370,7 @@ const textureLoader = new THREE.TextureLoader()
 
 const frameGeometry = new THREE.PlaneBufferGeometry( 60, 60, 20, 20  );
 const frameMaterial = new THREE.MeshBasicMaterial( {
-  map: textureLoader.load("http://localhost/gc/jpgs/0.jpg"),
+  map: textureLoader.load("jpgs/0.jpg"),
   side: THREE.DoubleSide,
   clippingPlanes: [
     clippingPlane[0]
@@ -387,7 +387,7 @@ const frames = [frame]
 
 for (let i = 1; i <= 3; i++) {
   const frameIMaterial = new THREE.MeshBasicMaterial({
-    map: textureLoader.load(`http://localhost/gc/jpgs/${i}.jpg`),
+    map: textureLoader.load(`jpgs/${i}.jpg`),
       side: THREE.DoubleSide,
       clippingPlanes: [
         clippingPlane[0]
