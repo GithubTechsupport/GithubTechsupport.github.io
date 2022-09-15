@@ -1,7 +1,379 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yes</title>
+</head>
+<body id="background">
+  <div id="carGameOver" style="display:none;">GAME OVER
+    <div id="cgoScoreText">Final Score:</div>
+    <div id="cgoScore">0</div>
+    <div id="cgoRetry">Retry</div>
+    <div id="cgoCancel">Cancel</div>
+  </div>
+  </div style="display:none;">
+  <div id="carChangeTab" style="display:none;">
+    <div id="carChange">Change car</div>
+    <div id="carNext">next</div>
+    <div id="carBack">back</div>
+  </div>
+  <h1 id="carScore" style="display:none;">0</h1>
+  <h1 id="carSpeed" style="display:none;">0 km/h</h1>
+  <div id="loading-screen">
+    <div id="loading-inner">
+      <span aria-hidden="false">LOADING</span>
+      LOADING
+      <span aria-hidden="false">LOADING</span>
+    </div>
+  </div>
+  <div id="overflow"></div>
+  <div id="back" style="display:none;">Back</div>
+  <div id="pointers" style="display:none;">Press &#8593; & &#8595; to scroll</div>
+  <div id="arrowSun">&#8595;</div>
+  <div id="sun">
+    <div id="sunText">Click Me!</div>
+  </div>
+  <div id="container" style="display:;">
+    <div id="title">vertex world</div>
+    <div id="titleBg"></div>
+  </div>
+  <div id="beats" onclick="beatsOn()">🔈</div>
+  <div id="beatsContainer">
+    <div id="beatsText">Nothing in life is to be feared. It is only to be understood.</div>
+  </div>
+  <div id="AboutMeTag" onclick="AboutMeSlide()">About me &#8594;</div>
+  <div id="AboutMePage" style="display:none;">
+    <div id="AboutMeBackground">
+      <div id="AboutMeGrid"></div>
+      <div id="AboutMeX" onclick="AboutMeExit()">&#8592; Return</div>
+      <div id="win98" class="window" style="margin: 0px; width: 60vw; height: 90vh;" data-tilt data-tilt-max="0">
+        <div class="title-bar" style="background: ">
+          <div class="title-bar-text">
+            Σπίτι
+          </div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button id="maximize" aria-label="Maximize" onclick="maximized()"></button>
+            <button id="restore" aria-label="Restore" onclick="restored()" style="display:none;"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body" style="height: 92.6%; display: grid; grid-template-columns: repeat(3,12fr); grid-template-rows: repeat(3,12fr);">
+          <ul class="tree-view" style="position:relative; width:70%; height: 100%; padding:0; grid-column: 1 / 3; grid-row: 1 / 3;">
+            <img id="homeImg" data-tilt style="position: absolute; width:100%; height:100%; z-index:99;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/%22Evolution%22_and_life_in_vaporwave_flavours._%2848475685782%29.png/220px-%22Evolution%22_and_life_in_vaporwave_flavours._%2848475685782%29.png"></img>
+            <div id="calculator" style="position:absolute; display:none; padding:0; margin:7.9% 0 0 0.5%; height:99%; width:99%; transform:translateY(-8%)" class="window"><div class="title-bar"><div class="title-bar-text"><img id="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAXCAYAAAAcP/9qAAAA00lEQVRIS+1W7QrDIAy8PJlvVkmfrPpijtgqLuvAqVMY808JJD3PyxeFEAIWHFoGDObpjMO2ITImAII+4wvaAVgQRONdDLFtu9rMdbERwl6MC2DnXN0PlJc5jrq4BKwZtyS59x4fA0eNlzOue6w+rzuNJc3lEBHAjNH2mcBXcpUaC1DUy5gMPNJ+AtYa53eU8ijLa4T9jnGfeJXRf41fWuYITXWO/KzGOs1SX/h6HWvg1Bfm1LFGT2PzdjpVlmKXWwaW1adj/rddQjaQc+uZemTmPwC4nFEEj/GlJwAAAABJRU5ErkJggg==" alt="icon">Αριθμομηχανή</div></div><div id="options"><span class="options"><span class="underline">E</span>dit<span class="underline">V</span>iew<span class="underline">H</span>elp</span></div><div class="window-body body"><div class="field-row"><input type="text" id="display" readonly="" value=""></div><div><span class="box"></span><button class="delete-button">Backspace</button><button class="delete-button">CE</button><button class="delete-button">C</button></div><div class="main-grid"><div class="button-row"><button class="memory-button main-button">MC</button><button data-number="7" class="main-button">7</button><button data-number="8" class="main-button">8</button><button data-number="9" class="main-button">9</button><button class="main-button">/</button><button class="main-button">sqrt</button></div><div class="button-row"><button class="memory-button main-button">MR</button><button data-number="4" class="main-button">4</button><button data-number="5" class="main-button">5</button><button data-number="6" class="main-button">6</button><button class="main-button">*</button><button class="main-button">%</button></div><div class="button-row"><button class="memory-button main-button">MS</button><button data-number="1" class="main-button">1</button><button data-number="2" class="main-button">2</button><button data-number="3" class="main-button">3</button><button class="main-button">-</button><button class="main-button">1/x</button></div><div class="button-row"><button class="memory-button main-button">M+</button><button data-number="0" class="main-button">0</button><button class="main-button">+/-</button><button class="main-button">.</button><button class="main-button">+</button><button class="main-button">=</button></div></div></div></div>
+          </ul>
+          <section class="field-row" style="justify-content: flex-end; grid-row: 3; grid-column: 3; ">
+            <button id="calcBtn" onclick=calc()>Αριθμομηχανή</button>
+            <button id="AboutMeBtn">Σχετικά με μένα</button>
+            <button id="homeBtn" disabled onclick="home()">Σπίτι</button>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas id="scene"></canvas>
+  <div id="controls" style="display:none;">
+    <div id="keymap">Hello</div>
+    <canvas id="game3" class="game" style="display:none;"></canvas>
+
+    <div id="hearts" style="display:none">
+      <div id="p1heart1"></div>
+      <div id="p1heart2"></div>
+      <div id="p1heart3"></div>
+    </div>
+    <div id="hearts2" style="display:none">
+      <div id="p2heart1"></div>
+      <div id="p2heart2"></div>
+      <div id="p2heart3"></div>
+    </div>
+    <canvas id="game2" class="game" style="display:none;"></canvas>
+    <div id="exitGame">&#8592; BACK</div>
+  </div>
+  <div id="game1" style="display:none;">
+    <div id="exitTyperacer">&#8592; BACK</div>
+    <p id="joe" style="display:none">TYPING TEST</p>
+    <div id="text" class="text" style="display:none"></div>
+    <div id="wpm">0</div>
+    <div id="high2">High: 0 WPM</div>
+    <textarea id="input" class="input" type="text" style="display:none"></textarea>
+    <a id="retry2" style="display:none">Retry</a>
+    <table id="leaderboard" style="display:none">
+    </table>
+    <textarea id="nameInput" class="input" type="text" style="display:none"></textarea>
+    <input type="button" id="sendScore" value="Submit">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/16/Stats.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://circletype.labwire.ca/dist/circletype.min.js"></script>
+  <script>
+
+
+  window.onload = function() {
+    document.getElementById("loading-screen").style.display = "none";
+    const beats = document.getElementById("beats");
+    const beatsText = document.getElementById("beatsText");
+    const beatsContainer = document.getElementById("beatsContainer");
+
+    function playSong() {
+      if (beatsText.clientWidth > beatsContainer.clientWidth) {
+        beatsText.classList.add("beatstextscroll");
+      } else {
+        beatsText.classList.remove("beatstextscroll");
+
+      }
+
+      requestAnimationFrame(playSong);
+    }
+    playSong();
+  }
+
+  new CircleType(document.getElementById('sunText')).radius(60);
+
+  function beatsOn() {
+    if (beats.innerHTML == "🔈") {
+      beats.innerHTML = "🔊"
+    }
+    else {
+      beats.innerHTML = "🔈"
+    }
+  }
+
+  var StartX = 0
+  const start = document.getElementById("start");
+  const menu = document.getElementById("menu");
+  const menubackground = document.getElementById("menubackground");
+  const AboutMePage = document.getElementById("AboutMePage");
+  const body = document.getElementById("background");
+
+  const win98 = document.getElementById("win98");
+  const maximize = document.getElementById("maximize");
+  const restore = document.getElementById("restore");
+  const homeImg = document.getElementById("homeImg");
+  const homeBtn = document.getElementById("homeBtn");
+  const calcBtn = document.getElementById("calcBtn");
+
+  function maximized() {
+    maximize.style.display="none";
+    restore.style.display="";
+    gsap.to("#win98", {duration: 0.5, width: 100 + "vw", height: 100 + "vh"});
+  }
+
+  function restored() {
+    maximize.style.display="";
+    restore.style.display="none";
+    gsap.to("#win98", {duration: 0.5, width: 60 + "vw", height: 90 + "vh"});
+  }
+
+  function home() {
+    homeBtn.disabled = true;
+    calcBtn.disabled = false;
+    for (var i = 0; i < numbers.length; i++) {
+      numbers[i].removeEventListener("click", addEntry)
+    }
+    for (var i = 0; i < deletebutton.length; i++) {
+      deletebutton[i].removeEventListener("click", removeEntry)
+    }
+    homeImg.style.display="";
+    gsap.to("#homeImg", {duration: 0.5, rotateY:0 + "deg"});
+    setTimeout(() => {
+      calculator.style.display="none";
+    }, 500)
+  }
+
+  const calculator = document.getElementById("calculator")
+  const calcdisplay = document.getElementById("display")
+  var equation = calcdisplay.value
+  const numbers = document.querySelectorAll('.main-button')
+  const deletebutton = document.querySelectorAll('.delete-button')
+
+  function addEntry(e) {
+    if (e.target.innerHTML == "=" ) {
+      equation = eval(equation)
+      calcdisplay.value = equation
+      if (equation == undefined) {
+        equation = ""
+        calcdisplay.value = equation
+      }
+    }
+    else if (e.target.innerHTML == "sqrt" ) {
+      const joint = []
+      const split = calcdisplay.value.split("");
+      var deleteIndex = undefined
+      for (i = split.length - 1; i >= 0; i += -1 ) {
+        if (split[i] == "+" || split[i] == "-" || split[i] == "*" || split[i] == "/" ) {
+          deleteIndex = i + 1
+          break
+        }
+        joint.unshift(split[i]);
+
+      }
+      const sqrt = Math.sqrt(joint.join(""));
+      split.splice(deleteIndex, split.length, sqrt.toString())
+      calcdisplay.value = split.join("")
+      equation = calcdisplay.value
+
+    }
+    else if (e.target.innerHTML == "%") {
+      const joint = []
+      const split = calcdisplay.value.split("");
+      var deleteIndex = undefined
+      for (i = split.length - 1; i >= 0; i += -1 ) {
+        if (split[i] == "+" || split[i] == "-" || split[i] == "*" || split[i] == "/" ) {
+          deleteIndex = i + 1
+          break
+        }
+        joint.unshift(split[i]);
+
+      }
+      const percentage = joint.join("") / 100
+      split.splice(deleteIndex, split.length, percentage.toString())
+      calcdisplay.value = split.join("")
+      equation = calcdisplay.value
+    }
+    else if (e.target.innerHTML == "1/x" ) {
+      const joint = []
+      const split = calcdisplay.value.split("");
+      var deleteIndex = undefined
+      for (i = split.length - 1; i >= 0; i += -1 ) {
+        if (split[i] == "+" || split[i] == "-" || split[i] == "*" || split[i] == "/" ) {
+          deleteIndex = i + 1
+          break
+        }
+        joint.unshift(split[i]);
+
+      }
+      const oneOverX = 1 / joint.join("")
+      split.splice(deleteIndex, split.length, oneOverX.toString())
+      calcdisplay.value = split.join("")
+      equation = calcdisplay.value
+
+    }
+    else if (e.target.innerHTML == "+/-" ) {
+      const split = calcdisplay.value.split("");
+      for (i = split.length - 1; i > 0; i += -1 ) {
+        if (split[i] == "+" || split[i] == "-" || split[i] == "*" || split[i] == "/" ) {
+          if (split[i - 1] != "+" && split[i - 1] != "-" && split[i - 1] != "*" && split[i - 1] != "/" && split[i + 1] != "+" && split[i + 1] != "-" && split[i + 1] != "*" && split[i + 1] != "/" ) {
+            split.splice(i + 1, 0, "-");
+            calcdisplay.value = split.join("");
+            equation = calcdisplay.value;
+            break;
+          }
+        }
+      }
+      if (split.includes("+") == false && split.includes("-") == false && split.includes("*") == false && split.includes("/") == false ) {
+        if (split[0] != "-") {
+          split.unshift("-")
+          equation = split.join("");
+          calcdisplay.value = equation;
+        }
+      }
+    }
+    else if (e.target.innerHTML == "+" || e.target.innerHTML == "-" || e.target.innerHTML == "*" || e.target.innerHTML == "/") {
+      if (equation.slice(-1) == "+" || equation.slice(-1) == "-" || equation.slice(-1) == "*" || equation.slice(-1) == "/" ) {
+        calcdisplay.value = calcdisplay.value.slice(0, -1);
+        calcdisplay.value += e.target.innerHTML;
+        equation = calcdisplay.value;
+      }
+      else {
+        equation += e.target.innerHTML;
+        calcdisplay.value = equation;
+      }
+    }
+    else {
+      equation += e.target.innerHTML;
+      calcdisplay.value = equation;
+    }
+  }
+
+  function removeEntry(e) {
+    if (e.target.innerHTML == "C") {
+      equation = "";
+      calcdisplay.value = equation;
+    }
+    if (e.target.innerHTML == "CE") {
+      console.log("CE");
+      calcdisplay.value = calcdisplay.value.slice(0, -1);
+      equation = calcdisplay.value;
+      console.log(equation);
+    }
+    if (e.target.innerHTML == "Backspace" ) {
+      console.log("back")
+      calcdisplay.value = calcdisplay.value.slice(1);
+      equation = calcdisplay.value;
+      console.log(equation)
+    }
+  }
+
+  function calc() {
+    calcBtn.disabled = true;
+    homeBtn.disabled = false;
+    gsap.to("#homeImg", {duration: 0.5, rotateY:270 + "deg"});
+    calculator.style.display="";
+    setTimeout(() => {
+      homeImg.style.display="none";
+      for (var i = 0; i < numbers.length; i++) {
+        numbers[i].addEventListener("click", addEntry)
+      }
+      for (var i = 0; i < deletebutton.length; i++) {
+        deletebutton[i].addEventListener("click", removeEntry)
+      }
+    }, 500)
+  }
+
+  function AboutMeSlide() {
+    AboutMePage.style.display="";
+    body.style.overflow="hidden";
+    document.getElementById("arrowSun").style.display="none";
+    document.getElementById("sun").style.display="none";
+    document.getElementById("title").style.display="none";
+    document.getElementById("titleBg").style.display="none";
+    document.getElementById("beats").style.display="none";
+    document.getElementById("beatsContainer").style.display="none";
+    var x = document.body.scrollWidth;
+    const scroll = setInterval(() => {
+      window.scrollTo(document.body.scrollWidth-x,0);
+      x += -50
+      if (x <= 0) {
+        clearInterval(scroll);
+      }
+    }, 1)
+
+    function draw() {
+      if (x <= 0) {
+        clearInterval(scroll);
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  function AboutMeExit() {
+    var x = 0;
+    const scroll = setInterval(() => {
+      window.scrollTo(document.body.scrollWidth-x,0);
+      x += 50
+      if (x >= document.body.scrollWidth) {
+        AboutMePage.style.display="none";
+        body.style.overflow="";
+        document.getElementById("arrowSun").style.display="";
+        document.getElementById("sun").style.display="";
+        document.getElementById("title").style.display="";
+        document.getElementById("titleBg").style.display="";
+        document.getElementById("beats").style.display="";
+        document.getElementById("beatsContainer").style.display="";
+        clearInterval(scroll);
+      }
+    }, 1)
+
+  }
+
+  </script>
+  <script src="main.js" type="module"></script>
 </body>
 </html>
