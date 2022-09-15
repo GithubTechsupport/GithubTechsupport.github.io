@@ -451,39 +451,7 @@ for (let i = 1; i <= 3; i++) {
   }
 
   document.getElementById("sendScore").addEventListener("click", submission)
-
-    $('#sendScore').on('click', function(){
-      var point = trueWPM;
-      var name = document.getElementById("nameInput").value
-      sendScore.disabled = true;
-      $.ajax({
-        type: 'post',
-        url: 'wpmsubmit.php',
-        data: {
-          pointVal : point,
-          nameVal : name,
-        },
-        success: function(data){
-          console.log(data);
-        },
-        error: function(data){
-          console.log("something wrong");
-        }
-      });
-      $.ajax({
-        type: 'get',
-        url: 'wpmLeaderboard.php',
-        success: function(data){
-          $('#leaderboard').html(data);
-        },
-        error: function(data){
-          console.log("something wrong");
-        }
-      });
-    });
-  });
-
-
+  
   function initGame1() {
     $.ajax({
       type: 'get',
