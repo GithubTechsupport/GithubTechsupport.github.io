@@ -451,7 +451,7 @@ for (let i = 1; i <= 3; i++) {
   }
 
   document.getElementById("sendScore").addEventListener("click", submission)
-  
+
   function initGame1() {
     $.ajax({
       type: 'get',
@@ -1764,7 +1764,6 @@ for (let i = 1; i <= 3; i++) {
   $('#title').on('click', function(){
     carGame();
   })
-})
 
 function carGameRetry() {
   for (let i = 0; i < rocks.length; i++) {
