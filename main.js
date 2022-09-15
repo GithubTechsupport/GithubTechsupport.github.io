@@ -1663,7 +1663,7 @@ for (let i = 1; i <= 3; i++) {
   ];
   loader.crossOrigin = true;
   function carLoad(carFile) {
-    loader.load( `http://localhost/gc/${carFile}/scene.gltf`, function ( data ) {
+    loader.load( `${carFile}/scene.gltf`, function ( data ) {
       car = data.scene;
       if (carFile == 'old_rusty_car') {
         car.scale.multiplyScalar(1 / 55);
