@@ -9,6 +9,7 @@ from panda3d.core import Point3
 class MyApp(ShowBase):
     def __init__(self):
         ShowBase.__init__(self)
+        base.enableParticles()
         self.taskMgr.add(self.spinBoxTask, "SpinBoxTask")
 
         self.camera.setPos(0, 0, 0)
@@ -22,7 +23,7 @@ class MyApp(ShowBase):
         self.pivotNode.setH(30.0)
 
     def spinBoxTask(self, task):
-        angleDegrees = task.time * 50.0
+        angleDegrees = task.time * 100.0
         angleRadians = angleDegrees * (pi / 180.0)
         self.pivotNode.setHpr(angleDegrees, angleDegrees, angleDegrees)
         return Task.cont
